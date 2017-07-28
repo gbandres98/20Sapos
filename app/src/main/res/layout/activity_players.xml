@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.melee.jukes.a20sapos.MainActivity">
+
+    <TextView
+        android:id="@+id/TextView2"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <Spinner
+        android:id="@+id/playerCharSpinner"
+        android:layout_width="162dp"
+        android:layout_height="27dp"
+        android:entries="@array/characterArray"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/playerCharButton"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="75dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="73dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editName" />
+
+    <Button
+        android:id="@+id/playerCharButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continuar"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginEnd="23dp"
+        app:layout_constraintRight_toRightOf="@+id/playerCharSpinner"
+        android:layout_marginTop="85dp"
+        app:layout_constraintTop_toBottomOf="@+id/editName"
+        android:layout_marginRight="23dp" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Nombre"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="21dp"
+        app:layout_constraintTop_toBottomOf="@+id/TextView2"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

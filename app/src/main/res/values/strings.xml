@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">20 Sapos</string>
+    <string name="copyPasta">
+        The year is 20XX. Everyone plays Fox at TAS levels of perfection. Because of this, the winner of a match depends solely on port priority. The 20 Sage Toads metagame has evolved to ridiculous levels due to it being the only remaining factor to decide tournaments.
+    </string>
+    <string-array name="playerNumArray">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="characterArray">
+        <item>Bowser</item>
+        <item>Captain Falcon</item>
+        <item>Charizard</item>
+        <item>Dedede</item>
+        <item>Diddy Kong</item>
+        <item>Donkey Kong</item>
+        <item>Falco</item>
+        <item>Fox</item>
+        <item>Ganodorf</item>
+        <item>Ice Climbers</item>
+        <item>Ike</item>
+        <item>Ivysaur</item>
+        <item>Jigglypuff</item>
+        <item>Kirby</item>
+        <item>Link</item>
+        <item>Lucas</item>
+        <item>Lucario</item>
+        <item>Luigi</item>
+        <item>Mario</item>
+        <item>Marth</item>
+        <item>Meta Knight</item>
+        <item>Mewtwo</item>
+        <item>Mr. Game &amp; Watch</item>
+        <item>Ness</item>
+        <item>Olimar</item>
+        <item>Peach</item>
+        <item>Pit</item>
+        <item>Pikachu</item>
+        <item>Roy</item>
+        <item>Samus</item>
+        <item>R.O.B</item>
+        <item>Sheik</item>
+        <item>Snake</item>
+        <item>Sonic</item>
+        <item>Squirtle</item>
+        <item>Toon Link</item>
+        <item>Wario</item>
+        <item>Wolf</item>
+        <item>Yoshi</item>
+        <item>Zelda</item>
+        <item>Zero Suit Samus</item>
+    </string-array>
+
+</resources>
