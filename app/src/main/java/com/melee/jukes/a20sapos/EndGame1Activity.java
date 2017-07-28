@@ -22,6 +22,7 @@ public class EndGame1Activity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_endgame1);
         final SharedPreferences settings = getSharedPreferences("savedGame", 0);
         settings.edit().putBoolean("InGame",false);
+        settings.edit().apply();
         Gson gson = new Gson();
         String json = settings.getString("GameStatus", "");
         GameStatus status = gson.fromJson(json, GameStatus.class);
@@ -29,7 +30,7 @@ public class EndGame1Activity extends AppCompatActivity implements View.OnClickL
         TextView winner = (TextView) findViewById(R.id.textView6);
         for (Player p : status.players){
             if(p.alive == 1){
-                if(winner.getText().toString() == "") {
+                if (winner.getText().toString().equals("")) {
                     winner.setText(p.name+"\n("+p.character+")");
                 } else{
                     winner.setText(winner.getText().toString()+"\n"+p.name+"\n("+p.character+")");
@@ -64,7 +65,6 @@ public class EndGame1Activity extends AppCompatActivity implements View.OnClickL
             LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout2);
             layout.removeView(v);
             final SharedPreferences settings = getSharedPreferences("savedGame", 0);
-            settings.edit().putBoolean("InGame",false);
             Gson gson = new Gson();
             String json = settings.getString("GameStatus", "");
             GameStatus status = gson.fromJson(json, GameStatus.class);
