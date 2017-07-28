@@ -43,6 +43,8 @@ public class PlayersActivity extends AppCompatActivity {
                 GameStatus status = gson.fromJson(json, GameStatus.class);
                 status.players.get(playerNum).setName(nombre.getText().toString());
                 status.players.get(playerNum).setCharacter(spinner.getSelectedItem().toString());
+                status.playersAlive.get(playerNum).setName(nombre.getText().toString());
+                status.playersAlive.get(playerNum).setCharacter(spinner.getSelectedItem().toString());
                 SharedPreferences.Editor prefsEditor = settings.edit();
                 Gson gson1 = new Gson();
                 String json1 = gson1.toJson(status);

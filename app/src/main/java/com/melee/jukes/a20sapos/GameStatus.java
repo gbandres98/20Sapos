@@ -18,6 +18,7 @@ public class GameStatus {
     public List<String> charactersAlive;
     public List<String> history;
     public List<Player> playersDead;
+    public List<Player> playersAlive;
     Context mContext;
     public GameStatus(){
         this.players = new ArrayList<>();
@@ -25,8 +26,27 @@ public class GameStatus {
         this.charactersAlive = new ArrayList<>();
         this.history = new ArrayList<>();
         this.playersDead = new ArrayList<>();
+        this.playersAlive = new ArrayList<>();
+    }
+    public Boolean inProgress(){
+        Boolean res = false;
+        String cha = null;
+        for(Player p : this.players){
+            if (p.alive == 1) {
+                if (cha == null) {
+                    cha = p.character;
+                } else {
+                    if (!cha.equals(p.character)) {
+                        res = true;
+                        break;
+                    }
+                }
+            }
+        }
+        return res;
     }
     public void addPlayer(Player player){
+        this.playersAlive.add(player);
         this.players.add(player);
     }
     public void addCharacters(String[] c){
@@ -41,7 +61,7 @@ public class GameStatus {
             if (p.character.equals(c)){
                 p.rip();
                 playersDead.add(p);
-                history.add("¡"+p+" fue eliminado!");
+                history.add("¡"+p.name+" fue eliminado!");
             }
         }
     }

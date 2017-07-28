@@ -23,12 +23,9 @@ public class InGameActivity extends AppCompatActivity implements View.OnClickLis
         Gson gson = new Gson();
         String json = settings.getString("GameStatus", "");
         GameStatus status = gson.fromJson(json, GameStatus.class);
-        if (status.playersDead.size() == status.players.size()-1){
+        if (!status.inProgress()){
             startActivity(new Intent(InGameActivity.this, EndGame1Activity.class));
             /*settings.edit().putBoolean("InGame",false);*/
-        }
-        if (status.playersDead.size() == status.players.size()){
-            //TODO
         }
         LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout1);
         for (String s : status.charactersAlive) {
@@ -46,11 +43,12 @@ public class InGameActivity extends AppCompatActivity implements View.OnClickLis
         end.setOnClickListener(this);
     }
     public void onClick(View v) {
+        final SharedPreferences settings1 = getSharedPreferences("savedGame", 0);
         Button b = (Button) v;
         if (b.getText().toString() == "Terminar partida"){
-
+            settings1.edit().putBoolean("InGame",false);
+            startActivity(new Intent(InGameActivity.this, MainActivity.class));
         }else {
-            final SharedPreferences settings1 = getSharedPreferences("savedGame", 0);
             Gson gson = new Gson();
             String json = settings1.getString("GameStatus", "");
             GameStatus status = gson.fromJson(json, GameStatus.class);

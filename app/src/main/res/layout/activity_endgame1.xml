@@ -19,5 +19,14 @@
         android:layout_height="wrap_content"
         android:text="El ganador es:"
         android:textSize="30sp" />
-</LinearLayout>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textAlignment="center"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 </LinearLayout>
