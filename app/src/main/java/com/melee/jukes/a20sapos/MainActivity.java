@@ -2,18 +2,14 @@ package com.melee.jukes.a20sapos;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
 import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Integer playerNum = 4;
@@ -34,20 +30,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void onClick(View v) {
                 playerNum = playerNumSpinner.getSelectedItemPosition() + 2;
                 GameStatus status = new GameStatus();
+                String[] chars = getResources().getStringArray(R.array.characterArrayPM);
+                status.addCharacters(chars);
                 for(int i = 0;i<playerNum;i++){
                     Player p = new Player(i);
                     status.addPlayer(p);
                 }
-                String[] chars = getResources().getStringArray(R.array.characterArray);
-                status.addCharacters(chars);
                 SharedPreferences.Editor prefsEditor = settings.edit();
                 Gson gson = new Gson();
                 String json = gson.toJson(status);
                 prefsEditor.putString("GameStatus", json);
                 prefsEditor.putInt("playerNum",0);
                 prefsEditor.putInt("playerMax",playerNum);
+                prefsEditor.putString("game", "PM");
                 prefsEditor.commit();
-                startActivity(new Intent(MainActivity.this,PlayersActivity.class));
+                startActivity(new Intent(MainActivity.this, BansActivity.class));
             }
         });
 

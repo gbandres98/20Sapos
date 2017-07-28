@@ -28,7 +28,6 @@
         android:id="@+id/playerCharSpinner"
         android:layout_width="162dp"
         android:layout_height="27dp"
-        android:entries="@array/characterArray"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"

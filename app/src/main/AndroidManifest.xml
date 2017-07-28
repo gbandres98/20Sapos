@@ -19,6 +19,7 @@
         <activity android:name=".PlayersActivity"/>
         <activity android:name=".InGameActivity"/>
         <activity android:name=".EndGame1Activity"/>
+        <activity android:name=".BansActivity" />
     </application>
 
 </manifest>

@@ -8,7 +8,36 @@
         <item>3</item>
         <item>4</item>
     </string-array>
-    <string-array name="characterArray">
+    <string-array name="characterArrayMelee">
+        <item>Bowser</item>
+        <item>Captain Falcon</item>
+        <item>Donkey Kong</item>
+        <item>Dr. Mario</item>
+        <item>Falco</item>
+        <item>Fox</item>
+        <item>Ganondorf</item>
+        <item>Ice Climbers</item>
+        <item>Jigglypuff</item>
+        <item>Kirby</item>
+        <item>Link</item>
+        <item>Luigi</item>
+        <item>Mario</item>
+        <item>Marth</item>
+        <item>Mewtwo</item>
+        <item>Mr. Game &amp; Watch</item>
+        <item>Ness</item>
+        <item>Peach</item>
+        <item>Yoshi</item>
+        <item>Pichu</item>
+        <item>Pikachu</item>
+        <item>Roy</item>
+        <item>Samus</item>
+        <item>Sheik</item>
+        <item>Young Link</item>
+        <item>Yoshi</item>
+        <item>Zelda</item>
+    </string-array>
+    <string-array name="characterArrayPM">
         <item>Bowser</item>
         <item>Captain Falcon</item>
         <item>Charizard</item>

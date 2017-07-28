@@ -1,8 +1,6 @@
 package com.melee.jukes.a20sapos;
 
 import android.content.Context;
-import android.os.Parcel;
-import android.os.Parcelable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,6 +51,16 @@ public class GameStatus {
         List<String> temp = Arrays.asList(c);
         this.characters.addAll(temp);
         this.charactersAlive.addAll(temp);
+    }
+
+    public void removeCharacter(String c) {
+        this.characters.remove(c);
+        this.charactersAlive.remove(c);
+    }
+
+    public void clearCharacters() {
+        this.characters = new ArrayList<>();
+        this.charactersAlive = new ArrayList<>();
     }
     public void killCharacter(String c){
         charactersAlive.remove(c);

@@ -2,10 +2,9 @@ package com.melee.jukes.a20sapos;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,11 +29,16 @@ public class PlayersActivity extends AppCompatActivity {
             settings.edit().putBoolean("InGame",true);
             startActivity(new Intent(PlayersActivity.this,InGameActivity.class));
         }
+        Gson gson = new Gson();
+        String json = settings.getString("GameStatus", "");
+        GameStatus status = gson.fromJson(json, GameStatus.class);
         Integer texto = playerNum + 1;
         TextView text = (TextView) findViewById(R.id.TextView2);
         text.setText("Jugador "+texto.toString()+":");
         final EditText nombre = (EditText) findViewById(R.id.editName);
         final Spinner spinner = (Spinner) findViewById(R.id.playerCharSpinner);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, status.characters);
+        spinner.setAdapter(spinnerArrayAdapter);
         final Button button = (Button) findViewById(R.id.playerCharButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
