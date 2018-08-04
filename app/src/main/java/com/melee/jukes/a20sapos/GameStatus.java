@@ -5,6 +5,7 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by WowSuchJukes on 27/07/2017.
@@ -56,6 +57,15 @@ public class GameStatus {
     public void removeCharacter(String c) {
         this.characters.remove(c);
         this.charactersAlive.remove(c);
+    }
+
+    public void removeRandomCharacters(Integer i) {
+        for (int j = 0; j < i; j++) {
+            Random rand = new Random();
+            int remove = rand.nextInt(this.characters.size());
+            this.characters.remove(remove);
+            this.charactersAlive.remove(remove);
+        }
     }
 
     public void clearCharacters() {
